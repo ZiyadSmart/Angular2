@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, input } from '@angular/core';
-import { ButtonDeleteComponent } from '../../button-delete/button-delete.component';
+import { TemperatureDeleteComponent } from '../../button-delete/temperature-delete/temperature-delete.component';
 
 @Component({
   selector: 'app-temperature-element',
-   imports : [ButtonDeleteComponent],
+  imports : [TemperatureDeleteComponent],
   templateUrl: './temperature-element.component.html',
   styleUrl: './temperature-element.component.css'
  

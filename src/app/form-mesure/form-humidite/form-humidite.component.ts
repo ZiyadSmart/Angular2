@@ -73,6 +73,8 @@ export class FormHumiditeComponent {
         console.log('Température ajoutée:', result);
         this.resultJson = JSON.stringify(result.toJson(), null, 2);
       });
+
+      
     }
   }
 
