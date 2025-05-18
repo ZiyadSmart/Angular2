@@ -1,0 +1,56 @@
+<div class="container">
+  <h2>Formulaire de Humidite</h2>
+  
+  <form [formGroup]="humiditeForm">
+    <div class="form-group">
+      <label for="id">ID:</label>
+      <input 
+        type="number" 
+        id="id" 
+        formControlName="id" 
+        class="form-control"
+        required>
+      <div *ngIf="humiditeForm.get('id')?.invalid && humiditeForm.get('id')?.touched" class="error-message">
+        ID est requis et doit être positif
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="value">Valeur:</label>
+      <input 
+        type="number" 
+        id="value" 
+        formControlName="value" 
+        class="form-control"
+        step="0.1"
+        required>
+      <div *ngIf="humiditeForm.get('value')?.invalid && humiditeForm.get('value')?.touched" class="error-message">
+        Valeur est requise
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="date">Date:</label>
+      <input 
+        type="date" 
+        id="date" 
+        formControlName="date" 
+        class="form-control"
+        required>
+      <div *ngIf="humiditeForm.get('date')?.invalid && humiditeForm.get('date')?.touched" class="error-message">
+        Date est requise
+      </div>
+    </div>
+    
+    <div class="button-group">
+      <button type="button" class="btn btn-success" [disabled]="humiditeForm.invalid" (click)="addHumidite()">Ajouter</button>
+      <button type="button" class="btn btn-primary" [disabled]="humiditeForm.invalid" (click)="updateHumidite()">Modifier</button>
+      <button type="button" class="btn btn-secondary" [disabled]="humiditeForm.invalid" (click)="onSubmit()">OK</button>
+    </div>
+  </form>
+  
+  <div *ngIf="resultJson" class="result-container">
+    <h3>Objet Humidite créé:</h3>
+    <pre>{{ resultJson }}</pre>
+  </div>
+</div>

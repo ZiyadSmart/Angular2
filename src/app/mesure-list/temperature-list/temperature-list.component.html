@@ -1,0 +1,22 @@
+<div>
+    <h2>Liste des Températures</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Valeur (°C)</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+    </table>
+    <table>
+        <tbody>
+            @for(temperature of tabTemperature; track temperature.id){
+                <app-temperature-element [id]="temperature.id" [value]="temperature.value" [date]="temperature.date"/>
+            }
+        </tbody>
+    </table>
+        <tr>
+            <app-form-temp />
+        </tr>
+</div>

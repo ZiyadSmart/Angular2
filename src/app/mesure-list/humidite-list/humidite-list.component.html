@@ -1,0 +1,22 @@
+<div>
+    <h2>Liste des Humidite</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Valeur (°C)</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+    </table>
+    <table>
+        <tbody>
+            @for(humidite of tabHumidite; track humidite.id){
+                <app-humidite-element [id]="humidite.id" [value]="humidite.value" [date]="humidite.date"/>
+            }
+        </tbody>
+    </table>
+        <tr>
+            <app-form-humidite />
+        </tr>
+</div>
